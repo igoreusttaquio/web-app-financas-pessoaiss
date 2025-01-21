@@ -1,0 +1,15 @@
+//- layout.pug
+
+doctype html
+html(lang="pt-br")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title= title
+    link(rel="stylesheet", href="/styles/output.css")
+
+
+  body.bg-gray-900.text-white.dark
+    .navbar.bg-primary.text-primary-content
+      a.btn.btn-ghost.text-xl(href="/") Dashboard
+    block conteudo
