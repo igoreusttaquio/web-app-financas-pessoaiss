@@ -1,0 +1,12 @@
+{
+    "name": "financas-pessoais",
+    "version": "1.0.0",
+    "description": "Um aplicativo simples de financas pessoais",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "author": "Igor Silva",
+    "license": "ISC"
+}
