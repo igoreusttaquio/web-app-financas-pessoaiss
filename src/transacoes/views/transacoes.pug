@@ -1,0 +1,40 @@
+extends ../../templates/layout
+include ../../templates/modal-mixin
+
+block conteudo
+    div.min-h-screen.p-6.flex.items-center.justify-center
+        div.w-full.max-w-3xl.bg-gray-800.shadow-md.p-6.mb-6.rounded-lg
+            h2.text-2xl.font-semibold.mb-6.text-center Transações
+
+            //- Botão para abrir o modal
+            button.btn.btn-primary.w-full.mb-4(onclick="document.getElementById('modal-nova-transacao').classList.add('modal-open')")
+                | Adicionar Nova Transação
+
+            //- Modal de Nova Conta
+            +modal('modal-nova-transacao', 'Adicionar Nova Transacao')
+                include formulario-transacao.pug
+
+            // Histórico de Transações
+            h3.font-medium.text-xl.mb-4 Histórico de Transações
+            div.overflow-x-auto
+                table.table.table-zebra.w-full
+                    thead
+                        tr
+                            th Data
+                            th Conta
+                            th Categoria
+                            th Valor
+                            th Descrição
+                    tbody
+                        tr
+                            td 20/01/2025
+                            td Conta Corrente
+                            td Receita
+                            td R$ 100,00
+                            td Salário
+                        tr
+                            td 15/01/2025
+                            td Poupança
+                            td Despesa
+                            td R$ 50,00
+                            td Supermercado

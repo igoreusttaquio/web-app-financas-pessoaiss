@@ -1,0 +1,15 @@
+form(action="/conta" method="POST")
+    div.space-y-4
+        div
+            label(for="nome_conta" class="block text-sm font-medium") Nome da Conta
+            input#nome_conta.input.input-bordered.w-full.bg-gray-700.text-white(type="text" name="nome_conta" placeholder="Nome da Conta", required)
+        div
+            label(for="tipo_conta" class="block text-sm font-medium") Tipo de Conta
+            select#tipo_conta.select.select-bordered.w-full.bg-gray-700.text-white(name="tipo_conta")
+                option(value="corrente") Conta Corrente
+                option(value="poupanca") Poupança
+        div
+            label(for="saldo" class="block text-sm font-medium") Saldo
+            input#saldo.input.input-bordered.w-full.bg-gray-700.text-white(type="number" name="saldo" step="0.01" placeholder="Saldo Inicial", required)
+        div
+            button.btn.btn-primary.w-full(type="submit") Adicionar Conta

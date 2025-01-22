@@ -1,0 +1,8 @@
+//- modal-mixin.pug
+mixin modal(id, title)
+    div(id=`${id}` class="modal")
+        div.modal-box.bg-gray-800
+            h3.font-medium.text-xl.mb-4= title
+            block
+            div.modal-action
+                button.btn(onclick=`document.getElementById('${id}').classList.remove('modal-open')`) Fechar
