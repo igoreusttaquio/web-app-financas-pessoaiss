@@ -1,0 +1,12 @@
+form(action="/categoria" method="POST")
+    .space-y-4
+        div
+            label(for="nome_categoria" class="block text-sm font-medium") Nome da Categoria
+            input#nome_categoria(name="nome_categoria" type="text" class="input input-bordered w-full bg-gray-700 text-white" placeholder="Nome da Categoria" required)
+        div
+            label(for="tipo_categoria" class="block text-sm font-medium") Tipo de Categoria
+            select#tipo_categoria(name="tipo_categoria" class="select select-bordered w-full bg-gray-700 text-white")
+                option(value="receita") Receita
+                option(value="despesa") Despesa
+        div
+            button(type="submit" class="btn btn-primary w-full") Adicionar Categoria

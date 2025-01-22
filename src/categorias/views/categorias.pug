@@ -1,0 +1,30 @@
+extends ../../templates/layout
+include ../../templates/modal-mixin
+
+block conteudo
+    button.btn.btn-primary.w-full.mb-4(onclick="document.getElementById('modal-nova-categoria').classList.add('modal-open')")
+        | Adicionar Nova Categoria
+
+    //- Modal de Nova Conta
+    +modal('modal-nova-categoria', 'Adicionar Nova Categoria')
+        include formulario-categoria.pug
+
+    h3.font-medium.text-xl.mb-4 Minhas Categorias
+    div.overflow-x-auto
+    table.table.table-zebra.w-full
+        thead
+            tr
+                th Nome
+                th Tipo
+                th Ações
+        tbody
+            tr
+                td Salário
+                td Receita
+                td
+                    button.btn.btn-outline.btn-danger Excluir
+            tr
+                td Supermercado
+                td Despesa
+                td
+                    button.btn.btn-outline.btn-danger Excluir
