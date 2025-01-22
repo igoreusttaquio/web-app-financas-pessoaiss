@@ -1,12 +1,22 @@
 {
-    "name": "financas-pessoais",
-    "version": "1.0.0",
-    "description": "Um aplicativo simples de financas pessoais",
-    "main": "index.js",
-    "type": "module",
-    "scripts": {
-        "start": "node index.js"
-    },
-    "author": "Igor Silva",
-    "license": "ISC"
+  "name": "financas-pessoais",
+  "version": "1.0.0",
+  "description": "Um aplicativo simples de financas pessoais",
+  "main": "./src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./src/app.js",
+    "build:css": "tailwindcss -i ./public/styles/tailwind.css -o ./public/styles/output.css --watch"
+  },
+  "author": "Igor Silva",
+  "license": "ISC",
+  "dependencies": {
+    "daisyui": "^4.12.23",
+    "express": "^4.21.2",
+    "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "tailwindcss": "^3.4.17"
+  }
 }
