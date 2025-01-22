@@ -22,6 +22,7 @@ app.set("views", [
   path.join(__dirname, "contas", "views"),
   path.join(__dirname, "dashboard", "views"),
   path.join(__dirname, "transacoes", "views"),
+  path.join(__dirname, "categorias", "views"),
   path.join(__dirname, "templates"),
 ]);
 

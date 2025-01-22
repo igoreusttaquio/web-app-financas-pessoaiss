@@ -1,3 +1,3 @@
 export function categorias(request, response) {
-  response.end("categoria funciona");
+  response.render("categorias", { titulo: "Categoria" });
 }

@@ -1,3 +1,3 @@
 export function transacoes(request, response) {
-  response.render("transacoes");
+  response.render("transacoes", { titulo: "Transações" });
 }

@@ -2,47 +2,39 @@
 extends ../../templates/layout
 
 block conteudo
-  .min-h-screen.p-6.flex.items-center.justify-center
-    .w-full.max-w-3xl.bg-gray-800.shadow-md.p-6.mb-6.rounded-lg
-      h2.text-2xl.font-semibold.mb-6.text-center Dashboard
+  .grid(class="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6")
+    .card.bg-gray-700.shadow-md.p-6
+      h3.text-xl.font-medium.mb-2 Total em Contas
+      p.text-lg R$ 4.500,00
+    .card.bg-gray-700.shadow-md.p-6
+      h3.text-xl.font-medium.mb-2 Total de Transações
+      p.text-lg 15 transações
+    .card.bg-gray-700.shadow-md.p-6
+      h3.text-xl.font-medium.mb-2 Saldo Total
+      p.text-lg R$ 1.500,00
 
-      .grid(class="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6")
-        .card.bg-gray-700.shadow-md.p-6
-          h3.text-xl.font-medium.mb-2 Total em Contas
-          p.text-lg R$ 4.500,00
-        .card.bg-gray-700.shadow-md.p-6
-          h3.text-xl.font-medium.mb-2 Total de Transações
-          p.text-lg 15 transações
-        .card.bg-gray-700.shadow-md.p-6
-          h3.text-xl.font-medium.mb-2 Saldo Total
-          p.text-lg R$ 1.500,00
+  h3.text-xl.font-medium.mb-4 Atividades Recentes
+  .overflow-x-auto
+    table.table.table-zebra.w-full
+      thead
+        tr
+          th Data
+          th Conta
+          th Categoria
+          th Valor
+          th Descrição
+      tbody
+        - for(let transacao of transacoes)
+          tr
+            td #{transacao.data}
+            td #{transacao.conta}
+            td #{transacao.categoria}
+            td #{transacao.valor}
+            td #{transacao.descricao}
 
-      h3.text-xl.font-medium.mb-4 Atividades Recentes
-      .overflow-x-auto
-        table.table.table-zebra.w-full
-          thead
-            tr
-              th Data
-              th Conta
-              th Categoria
-              th Valor
-              th Descrição
-          tbody
-            tr
-              td 20/01/2025
-              td Conta Corrente
-              td Receita
-              td R$ 100,00
-              td Salário
-            tr
-              td 15/01/2025
-              td Poupança
-              td Despesa
-              td R$ 50,00
-              td Supermercado
 
-      .grid.grid-cols-1(class="sm:grid-cols-2 gap-6 mt-6")
-        div
-          a.btn.btn-primary.w-full(href="/contas") Gerenciar Contas
-        div
-          a.btn.btn-primary.w-full(href="/transacoes") Ver Transações
+  .grid.grid-cols-1(class="sm:grid-cols-2 gap-6 mt-6")
+    div
+      a.btn.btn-primary.w-full(href="/contas") Gerenciar Contas
+    div
+      a.btn.btn-primary.w-full(href="/transacoes") Ver Transações

@@ -17,7 +17,7 @@ export function dashboard(req, res) {
   ];
 
   res.render("dashboard", {
-    title: "Dashboard",
+    titulo: "Dashboard",
     transacoes,
   });
 }
