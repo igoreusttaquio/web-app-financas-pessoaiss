@@ -8,7 +8,7 @@ import { rota as rotasTrancao } from "./transacoes/index.js";
 import { rotas as rotasCategoria } from "./categorias/index.js";
 import { servirArquivosEstaticos } from "./utils/arquivos-estaticos.js";
 
-const PORT = 8080;
+const PORT = 8383;
 const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
