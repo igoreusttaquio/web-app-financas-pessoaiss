@@ -1,8 +1,9 @@
 import { Router } from "express";
-import { contas } from "./controller.js";
+import { contas, criarConta } from "./controller.js";
 
 const rota = Router();
 
 rota.get("/", contas);
+rota.post("/", criarConta);
 
 export { rota };

@@ -23,15 +23,10 @@ block conteudo
                     th Saldo
                     th Ações
             tbody
-                tr
-                    td Conta Corrente
-                    td Corrente
-                    td R$ 1.500,00
-                    td
-                        button.btn.btn-outline.btn-danger Excluir
-                tr
-                    td Poupança
-                    td Poupança
-                    td R$ 3.000,00
-                    td
-                        button.btn.btn-outline.btn-danger Excluir
+                - for(let conta of contas)
+                    tr
+                        td #{conta.nome_conta}
+                        td #{conta.tipo_conta}
+                        td R$#{conta.saldo}
+                        td
+                            button.btn.btn-outline.btn-danger Excluir
