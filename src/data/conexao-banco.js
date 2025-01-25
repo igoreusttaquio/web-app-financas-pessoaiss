@@ -1,47 +1,24 @@
-// Import mysql2/promise to use async/await with promises
+// mysql2/promise para usar async/await com promises
 import mysql from "mysql2/promise";
+import dotenv from "dotenv";
 
-// Create a function to establish the connection
+dotenv.config();
+
 export async function criarConexao() {
   try {
     const connection = await mysql.createConnection({
-      host: "172.17.0.4", // Your MySQL server host
-      user: "root", // Your MySQL username
-      password: "312198", // Your MySQL password
-      database: "financas_pessoais", // Your database name
+      host: process.env.DB_HOST, // Use environment variables
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_NAME,
     });
 
     console.log("Connected to MySQL!");
     return connection;
   } catch (error) {
     console.error("Error connecting to MySQL:", error);
-    throw error; // Rethrow the error to handle it in other files
+    throw new Error(
+      "Houve um problema ao tentar se conectar ao banco de dados"
+    );
   }
 }
-
-/* EXEMPLO DE USO
-
-// Import the connection function from db.js
-import { createConnection } from './db.js';
-
-// Define an async function to query the database
-async function runQuery() {
-  const connection = await createConnection();
-
-  try {
-    // Example query
-    const [rows] = await connection.execute('SELECT * FROM your_table_name');
-    console.log('Query Results:', rows);
-  } catch (err) {
-    console.error('Error running query:', err);
-  } finally {
-    // Close the connection after the query is finished
-    await connection.end();
-  }
-}
-
-// Call the function to run the query
-runQuery();
-
-
-*/

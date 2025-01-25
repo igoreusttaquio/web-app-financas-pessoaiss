@@ -26,6 +26,8 @@ app.set("views", [
   path.join(__dirname, "templates"),
 ]);
 
+app.use(express.urlencoded({ extended: false }));
+
 app.use("/contas", rotasConta);
 app.use("/transacoes", rotasTrancao);
 app.use("/categorias", rotasCategoria);
